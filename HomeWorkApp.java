@@ -149,7 +149,7 @@ public class HomeWorkApp {                       // это класс
             if (balleft == balright) {
                 System.out.println("середина найдена    " + balleft + "      и       " + balright);
                 System.out.println("сумма   " + (l1+1) + "   элеметов справа, и    " + (l2+1)+  "   элеметов слева   ");
-               // return;
+                return;
             } else if (balleft > balright) {
                 l1++;
                 balright = balright + mass1[12 - l1];
