@@ -2,6 +2,8 @@ package HomeWorkApp;
 
 import java.util.Scanner;
 
+import static java.lang.Math.random;
+
 public class HomeWorkApp {                       // это класс
 
     // 1. Задать целочисленный массив, состоящий из элементов
@@ -149,7 +151,7 @@ public class HomeWorkApp {                       // это класс
             if (balleft == balright) {
                 System.out.println("середина найдена    " + balleft + "      и       " + balright);
                 System.out.println("сумма   " + (l1+1) + "   элеметов справа, и    " + (l2+1)+  "   элеметов слева   ");
-                return;
+                break;
             } else if (balleft > balright) {
                 l1++;
                 balright = balright + mass1[12 - l1];
@@ -173,25 +175,69 @@ public class HomeWorkApp {                       // это класс
         // -> [ 6, 1, 3, 5 ]. При каком n в какую сторону сдвиг можете выбирать сами.
         System.out.println();
         System.out.println("задание 8");
-
-
-     /*   int[] mass2 = {177, 881, 3, 2, 5, 144, 355, 772, 1, 12};  // 10 элементов
+        int[] mass2 = {177, 881, 3, 2, 5, 144, 355, 772, 1, 12};  // 10 элементов
         Scanner scanner = new Scanner(System.in);
-        int shift = scanner.nextInt();
+        int shift = scanner.nextInt();  //вводим с клав.количество сдвигов
         System.out.println();
         int c =0;
+        int t=0;
         for (int lll = 0; lll < shift; lll ++){
-            for (int v=9; v > 0; v--){
-                if ((9-v) == 9){
-                    mass2[v] = mass2[9-(c)];
-                    System.out.print(mass2[v]+ "   ");
-                    c++;
-                } else if (v < 9) {
-                    mass2[v] = mass2[c];
-                    System.out.print(mass2[v]+ "   ");
-                    v++;}
+            System.out.println();
+            for (int v=9; v > -1; v--) {
+                if (v>0){
+                    if (v==9){
+                        t = mass2[v];
+                        mass2 [v] = mass2 [v-1];
+                    }
+                    else {
+                        mass2[v] = mass2[v - 1];
+                    }
+                }
+                else if (v==0)
+                    mass2 [v] =t;
             }
-        }*/
+            for (c = 0; c < 10; c++)                 // печать созданного массива
+                System.out.print(mass2[c]+ "   ");
+            System.out.println();
+        }
+        System.out.println("****************************************");
+        System.out.println();
+        System.out.println("задание 8");
+        Scanner scanner1 = new Scanner(System.in);
+        System.out.println("ввести количество сдвигов матрицы");
+        int shift1 = scanner.nextInt();  //вводим с клав.количество сдвигов+
+        System.out.println("ввести количество элементов матрицы");
+        int sizeM = scanner.nextInt(); // вводим количество чисел матрицы
+        System.out.println("ввести поочередно элемент матрицы, начиная с 0");
+
+        int[] mass4 = new int[sizeM];
+        for (int q = 0; q < (sizeM); q++){
+            mass4[q]  = (int)(Math.random()*100);
+            System.out.print(mass4[q]+"   " );
+        }
+        System.out.println();
+        System.out.println("матрица из " +sizeM+ " элементов сдвигается "  +shift1+  "  раз(а) ");
+        System.out.println();
+
+        for (int lll = 0; lll < shift1; lll ++){
+            System.out.println();
+            for (int v=sizeM-1; v > -1; v--) {
+                if (v>0){
+                    if (v==sizeM-1){
+                        t = mass4[v];
+                        mass4 [v] = mass4 [v-1];
+                    }
+                    else {
+                        mass4[v] = mass4[v - 1];
+                    }
+                }
+                else if (v==0)
+                    mass4 [v] =t;
+            }
+            for (int cc = 0; cc < sizeM; cc++)                 // печать созданного массива
+                System.out.print(mass4[cc]+ "   ");
+            System.out.println();
+        }
     }
 }
 
