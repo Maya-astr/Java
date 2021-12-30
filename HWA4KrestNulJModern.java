@@ -1,11 +1,8 @@
 package HomeWorkApp;
-import java.net.SocketOption;
-import java.util.Map;
 import java.util.Random;
 import java.util.Scanner;
-import java.util.StringJoiner;
-import java.util.regex.Matcher;
-public class HWA4KrestNul {                 // ниже объявлены глобальные переменные
+
+public class HWA4KrestNulJModern {                 // ниже объявлены глобальные переменные
     private final static int SIZE = 3; // размер игрового поля (final- указывает на финализированная константа, не меняемая на протяжении всего кода)
     private final static char DOT_EMPTY = '.';
     private final static char DOT_X ='X';
