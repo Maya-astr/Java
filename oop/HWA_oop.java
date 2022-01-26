@@ -1,6 +1,4 @@
-package HomeWorkApp.oop;
-
-import HomeWorkApp.oop.Employee;
+package HomeWorkApp5.oop;
 
 public class HWA_oop {
     public static void main(String[] args) {
